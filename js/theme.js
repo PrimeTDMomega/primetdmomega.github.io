@@ -1,3 +1,7 @@
+alert("This is a full website comming soon!");
+
+
+
 const themeMap = {
     dark: "light",
     light: "solar",
