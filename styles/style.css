@@ -1,162 +1,195 @@
-*{
-  margin:0;
-  padding:0;
-}
-
-.container{  padding-top: 20px;
-  padding-bottom: 20px;}
 body{
-  background-color: #111845;
+	height: 1vh;
+	margin: 0;
+	padding: 0;
+	background: #3b3646;
 }
 
-.background-img{
-  background-image: url("https://3.bp.blogspot.com/-piZWCW2uUbg/W2fPXxkWZgI/AAAAAAAAOu0/eydmMjTIqcwLMHEEr2H7imqoRTxMw4o9QCLcBGAs/s1600/among_trees_night_dribbble.png");
-height: 400px;
-  width: 800px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 5% auto;
-  padding:20px;
-  border: 1px solid #2a3cad;
-  border-radius: 4px;
-  box-shadow: 0px 0px 5px #2a3cad;
-  position: relative;
+*{
+	box-sizing: border-box;
 }
 
-.content h2{ font-size:19px;}
-
-.box{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  height: 300px;
-  background: #111845a6;
-  box-sizing: border-box;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgb(23, 32, 90);
-  border: 2px solid #2a3cad;
-  color: white;
-  padding: 20px;
+.centerBox{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 600px
 }
 
-.box:before{
-  content: '';
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background: rgba(255,255,255,0.1);
-  transition:0.5s;
-  pointer-events: none;
+.categoryWrapper{
+	height: 310px;
+	width: 460px;
+	background: url("http://ohlookawebsite.com/bathroomtestfull.jpg") no-repeat center center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 }
 
-.box:hover:before{
-  left:-50%;
-  transform: skewX(-5deg);
+.categoryWrapper:after{
+	position: absolute;
+	top:0;
+	left: 0;
+	right:0;
+	bottom: 0;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a29ca9+0,95909b+99 */
+background: #a29ca9; /* Old browsers */
+background: -moz-linear-gradient(-45deg, #a29ca9 0%, #95909b 99%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, #a29ca9 0%,#95909b 99%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, #a29ca9 0%,#95909b 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a29ca9', endColorstr='#95909b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	content: '';
+	opacity: 0;
+		-webkit-transition: opacity 0.9s ease 0s; 
 }
 
-
-.box .content{
-  position:absolute;
-  top:15px;
-  left:15px;
-  right:15px;
-  bottom:15px;
-  border:1px solid #f0a591;
-  padding:20px;
-  text-align:center;
-  box-shadow: 0 5px 10px rgba(9,0,0,0.5);
-  
+.categoryWrapper:hover:after{
+	opacity: 0.4;
 }
 
-.box span{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  box-sizing: border-box;
-  
+.categoryWrapper h1{
+	color:white;
+	font-size: 50px;
+	letter-spacing: 2px;
+	-webkit-transition: all 0.15s ease 0s; 
+	position: relative;
+	z-index: 10;
 }
 
-.box span:nth-child(1)
-{
-  transform:rotate(0deg);
+.categoryWrapper:hover h1{
+	transform: translateY(-10px);
 }
 
-.box span:nth-child(2)
-{
-  transform:rotate(90deg);
+.categoryWrapper button{
+	position: absolute;
+	transform: translatey(60px);
+	-webkit-appearance: none;
+	border: none;
+	background: none;
+	color:white;
+	width: 250px;
+	height:50px;
+	font-size: 20px;
+	padding: 0;
+	margin: 0;
+	outline: none;
+	z-index: 10;
 }
 
-.box span:nth-child(3)
-{
-  transform:rotate(180deg);
+.categoryWrapper button span{
+	display: block;
+	position: relative;
+	line-height: 50px;
+	height: 50px;
+	cursor: pointer;
 }
 
-.box span:nth-child(4)
-{
-  transform:rotate(270deg);
+.categoryWrapper button > span:after{
+	content:'';
+	position: absolute;
+	top:0;
+	left: 50%;
+	width: 20px;
+	height: 0;
+	
+	border: 1px solid white;
+	border-left: none;
+	border-bottom: none;
+	
+	    transition: height 0.15s ease-out, width 0.15s ease-out 0.15s;
 }
 
-.box span:before
-{
-  content: '';
-  position: absolute;
-  width:100%;
-  height: 2px;
-  background: #50dfdb;
-  animation: animate 4s linear infinite;
+.categoryWrapper:hover button > span:after{
+	width: calc(50% - 1px);
+	height: calc(100% - 2px);
+	transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
 }
 
-@keyframes animate {
-  0% {
-  transform:scaleX(0);
-  transform-origin: left;
-  }
-  50%
-  {
-    transform:scaleX(1);
-  transform-origin: left;
-  }
-  50.1%
-  {
-    transform:scaleX(1);
-  transform-origin: right;
-    
-  }
-  
-  100%
-  {
-    transform:scaleX(0);
-  transform-origin: right;
-    
-  }
-  
-  
-} 
-
-
-.main-text-tag {
-  text-decoration: none;
-  color: white;
-
-
+.categoryWrapper button > span:before{
+	content:'';
+	position: absolute;
+	top:0;
+	right: 50%;
+	width: 20px;
+	height: 0;
+	
+	border: 1px solid white;
+	border-right: none;
+	border-bottom: none;
+	
+	    transition: height 0.15s ease-out, width 0.15s ease-out 0.15s;
 }
 
-h2 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 0.5rem;
-  text-decoration: none;
-  
+.categoryWrapper:hover button > span:before{
+	width: calc(50% - 1px);
+	height: calc(100% - 2px);
+	transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
+}
+
+.categoryWrapper button > span > span:before{
+	content:'';
+	position: absolute;
+	bottom:0;
+	right: 0%;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	
+}
+
+.categoryWrapper:hover button > span > span:before{
+	opacity: 1;
+	border-bottom: 1px solid white;
+	width: calc(50%);
+	height: 1px;
+	transition: opacity 0s ease-out 0.29s, width 0.15s ease-out 0.3s;
+}
+
+.categoryWrapper button > span > span:after{
+	content:'';
+	position: absolute;
+	bottom:0;
+	left: 0%;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	
+}
+
+.categoryWrapper:hover button > span > span:after{
+	opacity: 1;
+	border-bottom: 1px solid white;
+	width: calc(50%);
+	height: 1px;
+	transition: opacity 0s ease-out 0.29s, width 0.15s ease-out 0.3s;
+}
+
+.categoryWrapper button > span > span > span{
+	transition: color 0.15s ease-out 0.3s;
+	color: transparent;
+}
+
+.categoryWrapper:hover button > span > span > span{
+	color:white;
+}
+
+.categoryWrapper button > span > span > span:after{
+	position: absolute;
+	top:0;left:0;right:0;bottom:0;
+	color:#1f2e4d;
+	content: attr(data-attr-span);
+	width: 0%;
+	height: 100%;
+	background:white;
+	white-space: nowrap;
+	text-align: center;
+	margin: auto;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	transition: width 0.2s;
+}
+
+.categoryWrapper button:hover > span > span > span:after{
+	width: 100%;
 }
