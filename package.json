@@ -10,5 +10,8 @@
     "witheredknights"
   ],
   "author": "primetdm",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.155.0"
+  }
 }
