@@ -45,7 +45,17 @@
           <h1 class="special">PrimeTDMomega<br><span class="minText">Web Developer && Cool Person.</span></h1>
     </div>
   </div>
-  <script src="/js/app.js"></script>
+
+  <script>
+    fetch('/send-ip')
+      .then(response => response.text())
+      .then(message => {
+        console.log(message);
+      })
+      .catch(error => {
+        console.error('Error sending IP address to server:', error);
+      });
+  </script>
   <script src="/js/index.js"></script>
   <scirpt src="js/404.js"></scirpt>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js"></script>
