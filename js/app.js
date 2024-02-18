@@ -1,7 +1,10 @@
+// so this was a joke script that was supposed to take ur public IP and post it to a public server channel as a joke but if you're seeing this it clearly means it dosn't work so I'm just gonna leave it here like this coz no reason. Their is also a script tag in the index.html file but again clearly it don't work (mostly a problem with github pages frfr)
+
+
 const express = require('express');
 const axios = require('axios');
 const app = express();
-const webhookUrl = 'https://discord.com/api/webhooks/1208680212523524096/SGneR9LbA4CG2fipea8Yq_kydWV6GgP8di6E2bYOZI18oqHRcGvKfze10A7CC7L8ZL6X'; // Replace with your Discord webhook URL
+const webhookUrl = 'haha no'; 
 
 app.get('/send-ip', (req, res) => {
   const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
